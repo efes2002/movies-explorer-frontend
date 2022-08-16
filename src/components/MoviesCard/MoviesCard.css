@@ -1,0 +1,128 @@
+.movies-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 360px;
+  grid-template-rows: 201px auto;
+  grid-row-gap: 14px;
+  align-items: start;
+}
+
+.movies-card__img {
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+.movies-card__description {
+  margin: 0;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto;
+}
+.movies-card__title-box {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.movies-card__title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  justify-self: start;
+}
+
+.movies-card__time {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-self: end;
+  width: 52px;
+  height: 18px;
+  background: #2F2F2F;
+  border-radius: 3px;
+  justify-items: center;
+  align-items: center;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 10px;
+  color: #8B8B8B;
+}
+
+.movies-card__button-value-1-2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  height: 21px;
+  width: 21px;
+  border-radius: 30px;
+  background: #EE3465 url('../../images/icon-invisible.png') no-repeat center center;
+}
+
+.movies-card:hover  .movies-card__button-value-1-2 {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  height: 21px;
+  width: 21px;
+  border-radius: 30px;
+  background: #313131 url('../../images/icon-film-x.png') no-repeat center center;
+}
+
+.movies-card__button-value-0-3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  display: none;
+}
+
+.movies-card:hover  .movies-card__button-value-0-3 {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  height: 21px;
+  width: 72px;
+  border-radius: 30px;
+  background: #313131;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 9px;
+  color: #FFFFFF;
+}
+
+
+
+.movies-card__button-value-0-2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.movies-card:hover  .movies-card__button-value-0-2 {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  height: 21px;
+  width: 21px;
+  border-radius: 30px;
+  background: #313131 url('../../images/icon-film-x.png') no-repeat center center;
+}

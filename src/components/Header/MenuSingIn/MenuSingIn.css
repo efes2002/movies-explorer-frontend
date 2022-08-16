@@ -1,0 +1,33 @@
+.header__menu-singin {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 30px;
+  justify-content: end;
+  align-items: center;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.header__menu-singin-link-register {
+  color: #FFFFFF;
+}
+
+.header__menu-singin-button-singin {
+  width: 76px;
+  height: 32px;
+  background: #3DDC84;
+  padding: 0px;
+  border-radius: 3px;
+  border-style: none;
+  align-items: center;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}

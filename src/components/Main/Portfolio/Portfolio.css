@@ -1,0 +1,145 @@
+.portfolio {
+  margin: 0;
+  padding: 0 70px 106px 70px;
+  background: #202020;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.portfolio__title {
+  margin: 100px 0 0 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+}
+
+.portfolio__line {
+  height: 0;
+  margin: 23px 0 0 0;
+  padding: 0;
+  border-bottom: 1px #DADADA solid;
+}
+
+.portfolio__description {
+  margin: 66px 0 0 0;
+  display: grid;
+  grid-template-columns: 660px auto;
+}
+
+.portfolio__description-name {
+  margin: 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.portfolio__description-subtitle {
+  margin: 18px 0 0 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.portfolio__description-text {
+  margin: 26px 0 0 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.portfolio__social {
+  margin: 99px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  grid-column-gap: 20px;
+}
+
+.portfolio__social-link {
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+}
+
+.portfolio__description-box-img {
+  display: grid;
+  justify-items: end;
+  align-items: start;
+}
+
+.portfolio__img-student {
+  width: 270px;
+  height: 327px;
+}
+
+.portfolio__work-title {
+  margin: 100px 0 31px 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #8B8B8B;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.portfolio__work-title-box {
+  margin: 20px 0 9px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+.portfolio__work-line {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px #424242 solid;
+}
+
+.portfolio__work-subtitle {
+  margin: 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+}
+
+.portfolio__icon-str {
+  margin: 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 60px;
+  letter-spacing: -0.04em;
+}

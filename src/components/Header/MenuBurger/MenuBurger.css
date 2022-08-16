@@ -1,0 +1,15 @@
+.header__menu-burger {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+.header__menu-burger-icon {
+  background: #202020;
+}

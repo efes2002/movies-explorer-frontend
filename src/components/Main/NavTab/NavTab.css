@@ -1,0 +1,24 @@
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: 66px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  background: #272727;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.navbar__link {
+  border-bottom: 1px #FFFFFF solid;
+}

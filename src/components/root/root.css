@@ -1,0 +1,19 @@
+.root {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  margin: 0;
+  background: #000000;
+  min-height: 100vh;
+}
+
+.cursor-hover:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+}
