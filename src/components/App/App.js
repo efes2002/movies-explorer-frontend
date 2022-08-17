@@ -10,6 +10,8 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+import MenuPopUp from "../Header/MenuPopUp/MenuPopUp";
+import Page404 from "../Page404/Page404";
 
 
 function App() {
@@ -58,15 +60,11 @@ function App() {
           <Route path="/" element={
             <Main
               onOpenMenuPopup={handleMenuPopupClick}
-              isOpen={isMenuPopupOpen}
-              onCloseMenuPopup={closeMenuPopup}
             />
           }/>
           <Route path="movies" element={
             <Movies
               onOpenMenuPopup={handleMenuPopupClick}
-              isOpen={isMenuPopupOpen}
-              onCloseMenuPopup={closeMenuPopup}
               films={films}
               onSaveFilm={handleSaveFilm}
               onDeleteSaveFilm={handleDeleteSaveFilm}
@@ -75,8 +73,6 @@ function App() {
           <Route path="saved-movies" element={
             <SavedMovies
               onOpenMenuPopup={handleMenuPopupClick}
-              isOpen={isMenuPopupOpen}
-              onCloseMenuPopup={closeMenuPopup}
               films={savedFilms}
               onDeleteSaveFilm={handleDeleteSaveFilm}
             />
@@ -86,12 +82,15 @@ function App() {
           <Route path="profile" element={
             <Profile
               onOpenMenuPopup={handleMenuPopupClick}
-              isOpen={isMenuPopupOpen}
-              onCloseMenuPopup={closeMenuPopup}
             />
           }/>
+          <Route path="404" element={<Page404/>}/>
         </Routes>
       </div>
+      <MenuPopUp
+        isOpen={isMenuPopupOpen}
+        onCloseMenuPopup={closeMenuPopup}
+      />
     </CurrentUserContext.Provider>
   );
 };

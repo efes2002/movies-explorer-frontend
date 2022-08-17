@@ -12,7 +12,6 @@ function SearchForm() {
 
   function handleChangeInputCheck() {
     setValueCheck(!valueCheck);
-    console.log(valueCheck);
   }
 
   return (
@@ -28,10 +27,12 @@ function SearchForm() {
       </div>
       <div className='search__check'>
         <label className='search__checkbox'>
-          <input className='search__checkbox-input' type="checkbox" onChange={handleChangeInputCheck}/>
-          <span className='search__checkbox-img1'>
+          <div className='search__checkbox-box'>
+            <input className='search__checkbox-input' type="checkbox" onChange={handleChangeInputCheck}/>
+            <span className='search__checkbox-img1'>
             <span className='search__checkbox-img2'/>
           </span>
+          </div>
           <p className='search__checkbox-title'>Короткометражки</p>
         </label>
       </div>

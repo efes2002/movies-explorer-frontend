@@ -1,6 +1,6 @@
 .navbar {
   margin: 0;
-  padding: 0;
+  padding: 0 70px;
   height: 66px;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -12,13 +12,30 @@
   font-family: Inter,'Arial', sans-serif;
   font-style: normal;
   color: #FFFFFF;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  text-decoration: none;
   list-style-type: none;
+  text-decoration-line: underline;
 }
 
 .navbar__link {
-  border-bottom: 1px #FFFFFF solid;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar {
+    padding: 0 14px;
+    font-size: 11px;
+    line-height: 16px;
+    gap: 24px;
+
+  }
 }

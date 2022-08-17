@@ -1,24 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Header.css';
 import MenuSingIn from './MenuSingIn/MenuSingIn';
 import MenuLogin from './MenuLogin/MenuLogin';
 import MenuBurger from './MenuBurger/MenuBurger';
-import MenuPopUp from "./MenuPopUp/MenuPopUp";
 import Logo from "../Logo/Logo";
+import useWindowDimensions from '../../hoc/useWindowDimensions'
+import {useLocation} from "react-router-dom";
 
 
-function Header({ onOpenMenuPopup, theme,  isOpen, onCloseMenuPopup }) {
+function Header({ onOpenMenuPopup, theme }) {
+
+  const { width } = useWindowDimensions();
+
+  let location = useLocation();
+  let menuSection = <MenuSingIn/>;
+
+
+
+  if (location.pathname === '/') {
+    menuSection = <MenuSingIn/>
+  }
+  if (location.pathname !== '/') {
+    if (width >= 800) {
+      menuSection = <MenuLogin/>
+    }
+    else{
+      menuSection = <MenuBurger onOpenMenuPopup={onOpenMenuPopup}/>
+    }
+  }
 
   return (
     <header className={`header ${theme}`}>
       <Logo/>
       <div className='header__menu'>
-        {false ? <MenuSingIn/> : <MenuBurger onOpenMenuPopup={onOpenMenuPopup}/>}
+        {menuSection}
       </div>
-      <MenuPopUp
-        isOpen={isOpen}
-        onCloseMenuPopup={onCloseMenuPopup}
-      />
     </header>
   )
 }

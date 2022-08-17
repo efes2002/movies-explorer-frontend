@@ -1,20 +1,12 @@
 .header__menu-popup {
-  position: absolute;
-  display: none;
-  width: 520px;
-  height: 100vh;
   bottom: 0;
   margin: 0;
   padding: 0;
-  background: #202020;
-  z-index: 2000;
-}
-
-.popup_opened {
+  background-color: #202020;
+  width: 520px;
+  height: 1024px;
   display: grid;
-  align-content: space-between;
-  right: 0;
-  top: 0;
+  align-items: start;
 }
 
 .header__menu-popup-icon-x {
@@ -77,14 +69,14 @@
 }
 
 .header__menu-popup-profile {
+  margin: 0 0 92px 0;
+  padding: 0;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto;
   gap: 13px;
   align-items: center;
   justify-content: center;
-  margin: 0 0 92px 0;
-  padding: 0px;
 }
 
 .header__menu-popup-profile-link {
@@ -116,5 +108,34 @@
 }
 
 .header__menu-popup-link {
+  margin: 0;
+  padding: 0;
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 400px) {
+  .header__menu-popup {
+    width: 320px;
+    height: 780px;
+    align-items: start;
+    align-content: space-between
+  }
+  .header__menu-popup-icon-x {
+    right: 13px;
+    top: 13px;
+  }
+  .header__menu-popup-navigation {
+    margin: 144px 0 0 0;
+    gap: 24px;
+  }
+  .header__menu-popup-films:after {
+    bottom: -9px;
+  }
+  .header__menu-popup-profile {
+    margin: 0 0 48px 0;
+  }
 }

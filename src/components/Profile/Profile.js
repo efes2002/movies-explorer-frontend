@@ -3,7 +3,7 @@ import './Profile.css'
 import Header from "../Header/Header";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
-function Profile({onOpenMenuPopup, isOpen, onCloseMenuPopup}) {
+function Profile({onOpenMenuPopup}) {
 
   const currentUser = useContext(CurrentUserContext);
   const [valueName, setValueName] = useState(currentUser.name);
@@ -22,8 +22,6 @@ function Profile({onOpenMenuPopup, isOpen, onCloseMenuPopup}) {
       <Header
         onOpenMenuPopup={onOpenMenuPopup}
         theme='header_theme_black'
-        isOpen={isOpen}
-        onCloseMenuPopup={onCloseMenuPopup}
       />
       <section className='profile__section'>
         <h1 className='profile__title'>Привет, {currentUser.name}!</h1>

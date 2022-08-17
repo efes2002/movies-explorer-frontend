@@ -1,0 +1,74 @@
+.page404 {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  background-color: #202020;
+  height: 700px;
+}
+
+.page404__title {
+  margin: 246px 0 0 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+}
+.page404__subtitle {
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+.page404__link {
+  margin: 184px 0 60px 0;
+  padding: 0;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #4285F4;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 800px) {
+  .page404 {
+    height: 1024px;
+    align-content: center;
+  }
+  .page404__title {
+    margin: 184px 0 0 0;
+  }
+  .page404__link {
+    margin: 184px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .page404 {
+    height: 780px;
+  }
+  .page404__title {
+    margin: 329px 0 0 0;
+    font-size: 80px;
+    line-height: 97px;
+  }
+  .page404__subtitle {
+    margin: 10px 0 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .page404__link {
+    margin: 284px 0 30px 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

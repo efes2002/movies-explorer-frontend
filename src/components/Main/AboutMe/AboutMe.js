@@ -1,15 +1,14 @@
 import React from 'react';
 import './AboutMe.css';
 import student from "../../../images/student.png";
-import {Link} from "react-router-dom";
 
 function AboutMe() {
   return (
-    <section className="about-me" name='about'>
+    <section className="about-me">
       <h2 className='about-me__title'>Студент</h2>
       <div className='about-me__line'/>
       <div className='about-me__description'>
-        <div className='about-mee__description-box-text'>
+        <div className='about-me__description-box-text'>
           <h3 className='about-me__description-name'>Виталий</h3>
           <p className='about-me__description-subtitle'>Фронтенд-разработчик, 30 лет</p>
           <p className='about-me__description-text'>

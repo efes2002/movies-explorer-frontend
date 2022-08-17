@@ -9,14 +9,12 @@ import Portfolio from "./Portfolio/Portfolio";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function Main({onOpenMenuPopup, isOpen, onCloseMenuPopup}) {
+function Main({onOpenMenuPopup}) {
   return (
     <main className='content'>
       <Header
         onOpenMenuPopup={onOpenMenuPopup}
         theme='header_theme_sapphire'
-        isOpen={isOpen}
-        onCloseMenuPopup={onCloseMenuPopup}
       />
       <Promo/>
       <NavTab/>

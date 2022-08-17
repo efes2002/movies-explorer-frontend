@@ -5,6 +5,7 @@
 }
 
 .form-user__logo {
+  display: grid;
   margin: 0;
   padding: 0;
   width: 38px;
@@ -41,7 +42,6 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: repeat(3, auto);
-  grid-row-gap: 10px;
 }
 
 .form-user__form-name {
@@ -60,8 +60,8 @@
   align-items: center;
   justify-content: start;
   height: 46px;
-  margin: 0;
-  padding: 0 0 0 10px;
+  margin: 10px 0;
+  padding: 0 0 0 15px;
   border: 0;
   background: #2F2F2F;
   border-radius: 8px;
@@ -138,4 +138,47 @@
   font-size: 14px;
   line-height: 17px;
   color: #4285F4;
+}
+
+@media screen and (max-width: 800px) {
+  .form-user {
+    display: grid;
+    grid-template-columns: 396px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-user {
+    display: grid;
+    grid-template-columns: 260px;
+    justify-items: center;
+  }
+  .form-user__title {
+    margin: 50px 0 80px 0;
+  }
+  .form-user__inputs {
+    grid-template-columns: 260px;
+  }
+  .form-user__form-input {
+    padding-left: 15px;
+  }
+  .form-user__button {
+    margin: 157px 0 0 0;
+    width: 260px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .form-user__link-box {
+    margin: 13px 0 0 0;
+    column-gap: 7px;
+  }
+  .form-user__link-title {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .form-user__link-login {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

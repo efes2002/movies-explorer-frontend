@@ -4,3 +4,11 @@
   width: 38px;
   height: 38px;
 }
+
+.logo {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+}

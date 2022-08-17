@@ -13,3 +13,10 @@
 .header__menu-burger-icon {
   background: #202020;
 }
+
+@media screen and (max-width: 400px) {
+  .header__menu-burger-icon {
+    height: 43px;
+    width: 40px;
+  }
+}
