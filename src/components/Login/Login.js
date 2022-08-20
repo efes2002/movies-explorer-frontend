@@ -6,7 +6,9 @@ function Login() {
 
   return (
     <div className='login'>
-      <FormUser/>
+      <div className='login__box'>
+        <FormUser/>
+      </div>
     </div>
   )
 }

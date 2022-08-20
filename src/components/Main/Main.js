@@ -11,19 +11,21 @@ import Footer from "../Footer/Footer";
 
 function Main({onOpenMenuPopup}) {
   return (
-    <main className='content'>
+    <div className='content'>
       <Header
         onOpenMenuPopup={onOpenMenuPopup}
         theme='header_theme_sapphire'
       />
-      <Promo/>
-      <NavTab/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
+      <main>
+        <Promo/>
+        <NavTab/>
+        <AboutProject/>
+        <Techs/>
+        <AboutMe/>
+        <Portfolio/>
+      </main>
       <Footer/>
-    </main>
+    </div>
   )
 }
 

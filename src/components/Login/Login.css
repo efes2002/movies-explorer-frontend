@@ -1,4 +1,10 @@
 .login {
+  margin: 0;
+  padding: 0;
+  background-color: #202020;
+}
+
+.login__box {
   margin: 70px 0;
   padding: 0;
   display: grid;
@@ -7,13 +13,13 @@
 }
 
 @media screen and (max-width: 800px) {
-  .login {
+  .login__box {
     margin: 232px 0;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .login {
+  .login__box {
     margin: 56px 0 30px 0;
     grid-template-columns: 320px;
   }

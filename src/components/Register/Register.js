@@ -6,7 +6,9 @@ function Register() {
 
   return (
     <div className='register'>
-      <FormUser/>
+      <div className='register__box'>
+        <FormUser/>
+      </div>
     </div>
   )
 }

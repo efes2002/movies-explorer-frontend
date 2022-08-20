@@ -20,7 +20,8 @@ function SearchForm() {
         <input className='search__form'
                type='text' id='input1' name='input1'
                placeholder='Фильм'
-               value={valueInput} onChange={handleChangeInputSearch}/>
+               value={valueInput} onChange={handleChangeInputSearch}
+               required/>
         <button className='search__button' type='submit'>
           <img className='search__button-img' src={imgSearch} alt='Кнопка поиска'/>
         </button>

@@ -12,8 +12,10 @@ function Movies({onOpenMenuPopup, films, onSaveFilm, onDeleteSaveFilm}) {
         onOpenMenuPopup={onOpenMenuPopup}
         theme='header_theme_black'
       />
-      <SearchForm/>
-      <MoviesCardList films={films} onSaveFilm={onSaveFilm} onDeleteSaveFilm={onDeleteSaveFilm}/>
+      <main>
+        <SearchForm/>
+        <MoviesCardList films={films} onSaveFilm={onSaveFilm} onDeleteSaveFilm={onDeleteSaveFilm}/>
+      </main>
       <Footer/>
     </>
   )

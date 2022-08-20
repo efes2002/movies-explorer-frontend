@@ -3,7 +3,7 @@
   padding: 0;
   position: relative;
   display: grid;
-  grid-template-columns: 1280px;
+  grid-template-columns: minmax(auto, 1280px);
   justify-content: center;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -15,11 +15,11 @@
 
 @media screen and (max-width: 800px) {
   .page {
-    grid-template-columns: 768px;
+    grid-template-columns: minmax(auto, 768px);
   }
 }
 @media screen and (max-width: 400px) {
   .page {
-    grid-template-columns: 320px;
+    grid-template-columns: minmax(auto, 320px)
   }
 }

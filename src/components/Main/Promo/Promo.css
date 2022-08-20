@@ -18,7 +18,6 @@
 
 .promo__title {
   width: 730px;
-  height: 116px;
   position: absolute;
   margin: 0 auto 40px auto;
   left: 0;
@@ -45,6 +44,15 @@
   }
   .promo__title {
     margin: 0 auto 16px auto;
+    max-width: 730px;
+
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .promo__title {
+    margin: 0 auto 16px auto;
+    width: 80%;
   }
 }
 
@@ -59,8 +67,7 @@
     height: 248px;
   }
   .promo__title {
-    width: 300px;
-    height: 117px;
+    max-width: 300px;
     margin: 0 auto 38px auto;
     font-size: 31px;
     line-height: 39px;

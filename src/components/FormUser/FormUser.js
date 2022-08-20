@@ -131,7 +131,7 @@ function FormUser() {
       <div className='form-user__inputs'>
         {elementForm}
       </div>
-      <button className='form-user__button cursor-hover' disabled="">{data.buttonTitle}</button>
+      <button type="submit" className='form-user__button cursor-hover' disabled="">{data.buttonTitle}</button>
       <div className='form-user__link-box'>
         <p className='form-user__link-title'>{data.buttonSubtitle1}</p>
         <Link className='form-user__link-login' to={data.buttonSubtitleLink}>
