@@ -18,8 +18,18 @@ function AboutMe() {
             начал заниматься фриланс-заказами и ушёл с постоянной работы.
           </p>
           <ul className='about-me__social'>
-            <li className='about-me__social-link'><a className='about-me__social-url' href='https://www.Facebook.com'>Facebook</a></li>
-            <li className='about-me__social-link'><a className='about-me__social-url' href='https://www.Github.com'>Github</a></li>
+            <li className='about-me__social-link'>
+              <a className='about-me__social-url'
+                 href='https://www.Facebook.com'
+                 target="_blank"
+                 rel="noopener noreferrer">Facebook</a>
+            </li>
+            <li className='about-me__social-link'>
+              <a className='about-me__social-url'
+                 href='https://www.Github.com'
+                 target="_blank"
+                 rel="noopener noreferrer">Github</a>
+            </li>
           </ul>
         </div>
         <div className='about-me__description-box-img'>

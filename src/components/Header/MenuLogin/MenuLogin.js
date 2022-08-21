@@ -1,17 +1,31 @@
 import React from 'react';
 import './MenuLogin.css';
 import iconProfile from "../../../images/icon-profile.png";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 function MenuLogin() {
+
+
+  let location = useLocation();
+  let styleActiveMovies = '';
+  let styleActiveSavMovies = '';
+
+  if (location.pathname === '/movies') {
+    styleActiveMovies = 'header__link_active-1280';
+  };
+  if (location.pathname === '/saved-movies') {
+    styleActiveSavMovies = 'header__link_active-1280';
+  };
+
+
   return (
     <nav className='header__menu-login'>
       <div className='header__menu-login-navigation'>
         <Link to='/movies'>
-          <p className='header__menu-login-link header__menu-login-films'>Фильмы</p>
+          <p className={`header__menu-login-link ${styleActiveMovies}`}>Фильмы</p>
         </Link>
         <Link to='/saved-movies'>
-          <p className='header__menu-login-link header__menu-login-films-save'>Сохранённые фильмы</p>
+          <p className={`header__menu-login-link ${styleActiveSavMovies}`}>Сохранённые фильмы</p>
         </Link>
       </div>
       <div className='header__menu-login-profile'>

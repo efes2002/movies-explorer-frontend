@@ -17,6 +17,7 @@ function MoviesCardList({ films, onSaveFilm, onDeleteSaveFilm }) {
     if (films.length < valueListMax+12) {
       setValueListMax(valueListMax+12);
       event.target.disabled = true;
+      event.target.style = 'display: none'
     }
     else {
       setValueListMax(valueListMax+12);
@@ -31,7 +32,7 @@ function MoviesCardList({ films, onSaveFilm, onDeleteSaveFilm }) {
         {elementFilms}
       </div>
       <div className='movies-list__next'>
-        <button className='movies-list__next-button' onClick={handleChangeValueList}>Ещё</button>
+        <button type="button" className='movies-list__next-button cursor-hover' onClick={handleChangeValueList}>Ещё</button>
       </div>
     </section>
   )

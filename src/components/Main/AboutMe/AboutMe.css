@@ -144,8 +144,8 @@
   .about-me__social {
     margin: 87px 0 0 0;
   }
-  .about-me__img-student {
-
+  .about-me__line {
+    margin-bottom: -1px;
   }
 }
 
@@ -155,12 +155,7 @@
     grid-template-columns: minmax(min-content, 145px) 145px;
     column-gap: 10px;
   }
-  .about-me__img-student {
-
-
-  }
 }
-
 
 @media screen and (max-width: 400px) {
   .about-me {

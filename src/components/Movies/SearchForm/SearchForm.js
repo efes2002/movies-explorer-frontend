@@ -22,13 +22,13 @@ function SearchForm() {
                placeholder='Фильм'
                value={valueInput} onChange={handleChangeInputSearch}
                required/>
-        <button className='search__button' type='submit'>
+        <button className='search__button cursor-hover' type='button'>
           <img className='search__button-img' src={imgSearch} alt='Кнопка поиска'/>
         </button>
       </div>
-      <div className='search__check'>
+      <div className='search__check cursor-hover'>
         <label className='search__checkbox'>
-          <div className='search__checkbox-box'>
+          <div className='search__checkbox-box cursor-hover'>
             <input className='search__checkbox-input' type="checkbox" onChange={handleChangeInputCheck}/>
             <span className='search__checkbox-img1'>
             <span className='search__checkbox-img2'/>

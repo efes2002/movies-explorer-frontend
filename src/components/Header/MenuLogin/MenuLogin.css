@@ -11,6 +11,9 @@
   font-family: Inter,'Arial', sans-serif;
   font-style: normal;
   color: #FFFFFF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .header__menu-login-navigation {
@@ -20,16 +23,8 @@
   gap: 20px;
 }
 
-.header__menu-login-films {
+.header__link_active-1280 {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.header__menu-login-films-save {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
 }
 
 .header__menu-login-profile-link {

@@ -2,10 +2,24 @@ import React from 'react';
 import './MenuPopUp.css';
 import iconX from '../../../images/icon-x.png'
 import iconProfile from "../../../images/icon-profile.png";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import Popup from "../../Popup/Popup";
 
 function MenuPopUp({ isOpen, onCloseMenuPopup}) {
+
+
+
+  let location = useLocation();
+  let styleActiveMovies = '';
+  let styleActiveSavMovies = '';
+
+  if (location.pathname === '/movies') {
+    styleActiveMovies = 'header__link_active-768-320';
+  };
+  if (location.pathname === '/saved-movies') {
+    styleActiveSavMovies = 'header__link_active-768-320';
+  };
+
 
   return (
     <Popup
@@ -18,10 +32,10 @@ function MenuPopUp({ isOpen, onCloseMenuPopup}) {
           <li className='header__menu-popup-main header__menu-popup-link'>
             <Link className='header__menu-popup-link' to='/' onClick={onCloseMenuPopup}>Главная</Link>
           </li>
-          <li className='header__menu-popup-films header__menu-popup-link'>
+          <li className={`header__menu-popup-films header__menu-popup-link ${styleActiveMovies}`}>
             <Link className='header__menu-popup-link' to='/movies' onClick={onCloseMenuPopup}>Фильмы</Link>
           </li>
-          <li className='header__menu-popup-films-save header__menu-popup-link'>
+          <li className={`header__menu-popup-films header__menu-popup-link ${styleActiveSavMovies}`}>
             <Link className='header__menu-popup-link' to='/saved-movies' onClick={onCloseMenuPopup}>Сохранённые фильмы</Link>
           </li>
         </ul>

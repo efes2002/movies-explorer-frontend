@@ -19,11 +19,11 @@ function MoviesCard({ film, onSaveFilm, onDeleteSaveFilm}) {
 
   if (location.pathname === '/movies') {
     divButton = savedFilm
-      ? <button className='movies-card__button-value-1-2' onClick={handleChangeDeleteSaveFilm}/>
-      : <button className='movies-card__button-value-0-3' onClick={handleChangeSaveFilm}>Сохранить</button>
+      ? <button className='movies-card__button-value-1-2 cursor-hover' onClick={handleChangeDeleteSaveFilm}/>
+      : <button className='movies-card__button-value-0-3 cursor-hover' onClick={handleChangeSaveFilm}>Сохранить</button>
   }
   else {
-    divButton = <button className='movies-card__button-value-0-2' onClick={handleChangeDeleteSaveFilm}/>
+    divButton = <button className='movies-card__button-value-0-2 cursor-hover' onClick={handleChangeDeleteSaveFilm}/>
   }
 
   return (

@@ -22,6 +22,11 @@ function App() {
 
   const [isMenuPopupOpen, setIsMenuPopupOpen] = useState(false);
 
+
+  const handleEditUser = ({name, email}) => {
+    setCurrentUser({name, email})
+  }
+
   const handleSaveFilm = (film) => {
     setFilms(films.map((item) => {
       if (item.id === film.id) {
@@ -82,6 +87,7 @@ function App() {
           <Route path="profile" element={
             <Profile
               onOpenMenuPopup={handleMenuPopupClick}
+              onEditUser={handleEditUser}
             />
           }/>
           <Route path="404" element={<Page404/>}/>

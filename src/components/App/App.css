@@ -15,11 +15,11 @@
 
 @media screen and (max-width: 800px) {
   .page {
-    grid-template-columns: minmax(auto, 768px);
+    grid-template-columns: minmax(auto, 800px);
   }
 }
 @media screen and (max-width: 400px) {
   .page {
-    grid-template-columns: minmax(auto, 320px)
+    grid-template-columns: minmax(auto, 400px)
   }
 }

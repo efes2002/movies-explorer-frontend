@@ -55,17 +55,14 @@
   position: absolute;
   display: block;
   content:'';
-  width:100%;
+  width:0;
   height:2px;
   background: #FFFFFF;
   bottom: -4px;
 }
 
-.header__menu-popup-films-save {
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  color: #FFFFFF;
+.header__link_active-768-320:after {
+  width:100%;
 }
 
 .header__menu-popup-profile {
