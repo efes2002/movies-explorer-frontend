@@ -1,0 +1,26 @@
+.register {
+  margin: 0;
+  padding: 0;
+  background-color: #202020;
+}
+
+.register__box {
+  margin: 70px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 396px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .register__box {
+    margin: 232px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .register__box {
+    margin: 56px 0 30px 0;
+    grid-template-columns: 320px;
+  }
+}

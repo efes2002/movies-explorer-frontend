@@ -1,0 +1,138 @@
+.header__menu-popup {
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #202020;
+  width: 520px;
+  height: 1024px;
+  display: grid;
+  align-items: start;
+}
+
+.header__menu-popup-icon-x {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+}
+
+.header__menu-popup-navigation {
+  margin: 159px 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  gap: 28px;
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  list-style-type: none;
+}
+
+.header__menu-popup-main {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.header__menu-popup-films {
+  position: relative;
+  display:block;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.header__menu-popup-films:after {
+  position: absolute;
+  display: block;
+  content:'';
+  width:0;
+  height:2px;
+  background: #FFFFFF;
+  bottom: -4px;
+}
+
+.header__link_active-768-320:after {
+  width:100%;
+}
+
+.header__menu-popup-profile {
+  margin: 0 0 92px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 13px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu-popup-profile-link {
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.header__menu-popup-icon-box {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: 30px;
+  height: 30px;
+  background: #313131;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 0px;
+  border-style: none;
+  align-items: center;
+  justify-items: center;
+}
+
+.header__menu-popup-icon {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header__menu-popup-link {
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 400px) {
+  .header__menu-popup {
+    width: 320px;
+    height: 780px;
+    align-items: start;
+    align-content: space-between
+  }
+  .header__menu-popup-icon-x {
+    right: 13px;
+    top: 13px;
+  }
+  .header__menu-popup-navigation {
+    margin: 144px 0 0 0;
+    gap: 24px;
+  }
+  .header__menu-popup-films:after {
+    bottom: -9px;
+  }
+  .header__menu-popup-profile {
+    margin: 0 0 48px 0;
+  }
+}
