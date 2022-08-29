@@ -1,5 +1,5 @@
 export const optionsApi = {
-  baseUrl: 'http://localhost:4000',
+  baseUrl: 'https://api.movieteka.ru',
 }
 
 export const optionsMoviesApi = {
