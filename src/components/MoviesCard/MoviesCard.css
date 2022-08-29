@@ -1,7 +1,7 @@
 .movies-card {
   position: relative;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 360px;
   grid-template-rows: 201px auto;
   grid-row-gap: 14px;
   align-items: start;
@@ -12,6 +12,8 @@
   padding: 0;
   border-radius: 6px;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .movies-card__description {
@@ -132,8 +134,11 @@
   background: #313131 url('../../images/icon-film-x.png') no-repeat center center;
 }
 
-@media screen and (max-width: 800px) {
+
+
+@media screen and (max-width: 900px) {
   .movies-card {
+    grid-template-columns: 339px;
     grid-template-rows: 190px auto;
     grid-row-gap: 25px;
   }
@@ -146,6 +151,7 @@
 
 @media screen and (max-width: 400px) {
   .movies-card {
+    grid-template-columns: 300px;
     grid-template-rows: 168px auto;
     grid-row-gap: 16px;
   }

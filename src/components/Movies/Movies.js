@@ -5,7 +5,10 @@ import Footer from "../Footer/Footer";
 import SearchForm from "../Movies/SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function Movies({onOpenMenuPopup, films, onSaveFilm, onDeleteSaveFilm}) {
+function Movies({ onOpenMenuPopup, movies, savedMovies,
+                  onSaveFilm, onDeleteSaveFilm, onSearch,
+                  isPlaceholder, errorMessage, onErrorMessage}) {
+
   return (
     <>
       <Header
@@ -13,8 +16,19 @@ function Movies({onOpenMenuPopup, films, onSaveFilm, onDeleteSaveFilm}) {
         theme='header_theme_black'
       />
       <main>
-        <SearchForm/>
-        <MoviesCardList films={films} onSaveFilm={onSaveFilm} onDeleteSaveFilm={onDeleteSaveFilm}/>
+        <SearchForm
+          onSearch={onSearch}
+          checkbox={movies.stateCheckbox}
+          textSearch={movies.textSearch} />
+        <MoviesCardList
+          errorMessage={errorMessage}
+          movies={movies.arrFilterMovies}
+          savedFilms={savedMovies}
+          onDeleteSaveFilm={onDeleteSaveFilm}
+          isPlaceholder={isPlaceholder}
+          onSaveFilm={onSaveFilm}
+          onErrorMessage={onErrorMessage}
+        />
       </main>
       <Footer/>
     </>

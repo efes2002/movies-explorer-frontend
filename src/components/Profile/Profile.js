@@ -1,16 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './Profile.css'
 import Header from "../Header/Header";
-import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import {Link} from "react-router-dom";
+import {LoggedInUserContext} from "../../contexts/LoggedInUserContext";
 
-function Profile({onOpenMenuPopup, onEditUser}) {
+function Profile({onOpenMenuPopup, onEditUser, onSignOut, currentUser}) {
 
   const [editActive, setEditActive] = useState(false);
-  const currentUser = useContext(CurrentUserContext);
-  const [valueName, setValueName] = useState(currentUser.name);
-  const [valueEmail, setValueEmail] = useState(currentUser.email);
+  const loggedIn = useContext(LoggedInUserContext);
 
+  const [valueName, setValueName] = useState(currentUser.name);
+  const [valueEmail, setValueEmail] = useState('');
 
   function handleEditUser() {
     onEditUser({name: valueName, email: valueEmail});
@@ -19,6 +19,10 @@ function Profile({onOpenMenuPopup, onEditUser}) {
 
   function handleInputNameChange(event) {
     setValueName(event.target.value);
+  }
+
+  function handleSignOut() {
+    onSignOut();
   }
 
   function handleInputEmailChange(event) {
@@ -44,7 +48,7 @@ function Profile({onOpenMenuPopup, onEditUser}) {
     <div className='profile__footer'>
       <div className='profile__footer-edit cursor-hover' onClick={handleEditActive}>Редактировать</div>
       <Link to='/'>
-        <div className='profile__footer-out cursor-hover'>Выйти из аккаунта</div>
+        <div className='profile__footer-out cursor-hover' onClick={handleSignOut}>Выйти из аккаунта</div>
       </Link>
     </div>
 
@@ -53,6 +57,10 @@ function Profile({onOpenMenuPopup, onEditUser}) {
       <button type="button" className='profile__button cursor-hover' onClick={handleEditUser}>Сохранить</button>
     </div>
 
+  useEffect(()=>{
+    setValueName(currentUser.name);
+    setValueEmail(currentUser.email);
+  }, [currentUser, loggedIn])
 
   return (
     <div className='profile'>
