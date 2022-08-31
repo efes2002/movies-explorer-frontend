@@ -31,14 +31,14 @@ function MoviesCard({ movie, onSaveFilm, onDeleteSaveFilm}) {
 
   return (
     <div className='movies-card'>
-      <a href={trailerLink} target="_blank">
+      <a  className='movies-card__link' href={trailerLink} target="_blank">
         <img className='movies-card__img' src={image} alt={`Картинка для фильма: ${nameRU}`}/>
       </a>
       <div className='movies-card__description'>
         <div className='movies-card__title-box'>
           <h3 className='movies-card__title'>{nameRU}</h3>
         </div>
-        <div className='movies-card__time'>{duration}</div>
+        <div className='movies-card__time'>{(Math.trunc(duration / 60)) + 'ч' + ' ' + (duration % 60)+ 'м'}</div>
       </div>
       {divButton}
     </div>

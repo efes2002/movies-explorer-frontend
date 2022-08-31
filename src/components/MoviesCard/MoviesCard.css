@@ -134,7 +134,14 @@
   background: #313131 url('../../images/icon-film-x.png') no-repeat center center;
 }
 
-
+.movies-card__link{
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 @media screen and (max-width: 900px) {
   .movies-card {
