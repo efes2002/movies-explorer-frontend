@@ -4,8 +4,9 @@ import { useLocation } from 'react-router-dom';
 
 function MoviesCard({ movie, onSaveFilm, onDeleteSaveFilm}) {
 
-  const {image, nameRU, duration, savedMovie} = movie;
+  const {image, nameRU, duration, savedMovie, trailerLink} = movie;
 
+  console.log(movie)
   let location = useLocation();
 
   function handleChangeSaveFilm() {
@@ -30,7 +31,9 @@ function MoviesCard({ movie, onSaveFilm, onDeleteSaveFilm}) {
 
   return (
     <div className='movies-card'>
-      <img className='movies-card__img' src={image} alt={`Картинка для фильма: ${nameRU}`}/>
+      <a href={trailerLink} target="_blank">
+        <img className='movies-card__img' src={image} alt={`Картинка для фильма: ${nameRU}`}/>
+      </a>
       <div className='movies-card__description'>
         <div className='movies-card__title-box'>
           <h3 className='movies-card__title'>{nameRU}</h3>
