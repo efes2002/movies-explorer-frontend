@@ -47,9 +47,7 @@ function MoviesCardList({ movies, onDeleteSaveFilm, isPlaceholder,
     onErrorMessage(''); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(()=>{
-    setValueListMax(startPage); // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [movies])
+
 
   return (
     <section className='movies-list'>
