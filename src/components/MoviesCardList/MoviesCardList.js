@@ -58,15 +58,19 @@ function MoviesCardList({ movies, onDeleteSaveFilm, isPlaceholder,
       </div>
       <div className='movies-list__next'>
 
-        {(movies.length <= 1) || (location.pathname === '/saved-movies')
-          ? <>{errorMessage ? <p className='movies-list__error'>{errorMessage}</p> : <></>}</>
-          : <button
-              type="button"
-              className='movies-list__next-button cursor-hover'
-              onClick={handleChangeValueList}
-            >Ещё</button>
+        {(movies.length === 0) || (location.pathname === '/saved-movies')
+          ? <>
+            { errorMessage
+              ? <p className='movies-list__error'>{errorMessage}</p>
+              : <></>}</>
+          : ((movies.length <= valueListMax) && (!isPlaceholder))
+            ? <></>
+            : <button
+                type="button"
+                className='movies-list__next-button cursor-hover'
+                onClick={handleChangeValueList}
+              >Ещё</button>
         }
-
       </div>
     </section>
   )

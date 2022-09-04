@@ -137,6 +137,11 @@
   color: #FFFFFF;
 }
 
+.profile__button-active {
+  background: #FFFFFF;
+  color: #000000;
+}
+
 @media screen and (max-width: 800px) {
   .profile__section {
     margin: 236px 0 261px 0;

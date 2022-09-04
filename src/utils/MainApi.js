@@ -101,8 +101,6 @@ class MainApi {
   }
 
   addMovie(movie) {
-    console.log(12, movie)
-
     const {
       movieId,
       country,

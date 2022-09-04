@@ -3,14 +3,15 @@ import './Profile.css'
 import Header from "../Header/Header";
 import {Link} from "react-router-dom";
 import {LoggedInUserContext} from "../../contexts/LoggedInUserContext";
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
-function Profile({onOpenMenuPopup, onEditUser, onSignOut, currentUser}) {
+function Profile({onOpenMenuPopup, onEditUser, onSignOut}) {
 
   const [editActive, setEditActive] = useState(false);
   const loggedIn = useContext(LoggedInUserContext);
-
+  const currentUser = useContext(CurrentUserContext);
   const [valueName, setValueName] = useState(currentUser.name);
-  const [valueEmail, setValueEmail] = useState('');
+  const [valueEmail, setValueEmail] = useState(currentUser.email);
 
   function handleEditUser() {
     onEditUser({name: valueName, email: valueEmail});
@@ -21,12 +22,12 @@ function Profile({onOpenMenuPopup, onEditUser, onSignOut, currentUser}) {
     setValueName(event.target.value);
   }
 
-  function handleSignOut() {
-    onSignOut();
-  }
-
   function handleInputEmailChange(event) {
     setValueEmail(event.target.value);
+  }
+
+  function handleSignOut() {
+    onSignOut();
   }
 
   function handleEditActive() {
@@ -54,13 +55,35 @@ function Profile({onOpenMenuPopup, onEditUser, onSignOut, currentUser}) {
 
   const elementButtonActiveEdit =
     <div className='profile__footer-button'>
-      <button type="button" className='profile__button cursor-hover' onClick={handleEditUser}>Сохранить</button>
+      <button id="buttonSaved"
+              type="button"
+              className='profile__button profile__button-active'
+              onClick={handleEditUser}
+      >Сохранить</button>
     </div>
 
   useEffect(()=>{
     setValueName(currentUser.name);
     setValueEmail(currentUser.email);
   }, [currentUser, loggedIn])
+
+
+  useEffect(()=>{
+    if (editActive) {
+      const elementButtonSaved = document.getElementById('buttonSaved');
+      if ((valueName !== currentUser.name) ||
+        (valueEmail !== currentUser.email)) {
+        elementButtonSaved.classList.remove('profile__button-active');
+        elementButtonSaved.classList.add('cursor-hover');
+        elementButtonSaved.disabled = false;
+      }
+      else {
+        elementButtonSaved.classList.add('profile__button-active');
+        elementButtonSaved.classList.remove('cursor-hover');
+        elementButtonSaved.disabled = true;
+      }
+    }
+  }, [valueName, valueEmail, currentUser, editActive])
 
   return (
     <div className='profile'>

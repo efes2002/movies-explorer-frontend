@@ -18,14 +18,12 @@ function FormUser({onRegister, onLogin, submitError, onSubmitError}) {
 
   function handleInputEmailChange(event) {
     onSubmitError('');
-
     const input = event.target;
     setValueEmail(input.value);
   }
 
   function handleInputPasswordChange(event) {
     onSubmitError('');
-
     const input = event.target;
     setValuePassword(input.value);
   }

@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './SearchForm.css'
-import imgSearch from '../../../images/find.png';
+import imgSearch from '../../images/find.png';
 
-function SearchForm({ onSearch, checkbox = false, textSearch = '' }) {
+function SearchForm({ onSearch, checkbox = false, textSearch = ''}) {
 
   const [valueInput, setValueInput] = useState(textSearch);
   const [valueCheck, setValueCheck] = useState(checkbox);
+  const [valuePlaceholder, setValuePlaceholder] = useState(textSearch);
+
 
   function handleChangeInputSearch(event) {
     setValueInput(event.target.value);
@@ -18,16 +20,18 @@ function SearchForm({ onSearch, checkbox = false, textSearch = '' }) {
   function handleSubmit(event) {
     event.preventDefault();
     onSearch({stateCheckbox: valueCheck, textSearch: valueInput});
-    setValueInput('');
   }
 
+  useEffect(()=>{
+    setValuePlaceholder(textSearch);
+  }, [textSearch])
 
   return (
     <section className='search'>
       <form className='search__form-box' onSubmit={handleSubmit}>
         <input className='search__form'
                type='text' id='input1' name='input1'
-               placeholder={valueInput}
+               placeholder={valuePlaceholder}
                value={valueInput} onChange={handleChangeInputSearch}
                required/>
         <button className='search__button cursor-hover'>

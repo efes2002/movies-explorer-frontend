@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './SavedMovies.css'
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import SearchForm from "../Movies/SearchForm/SearchForm";
+import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function SavedMovies({onOpenMenuPopup, movies, onSaveFilm,
