@@ -46,7 +46,16 @@
   color: #424242;
 }
 
-@media screen and (max-width: 800px) {
+.movies-list__error{
+  font-family: Inter,'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 900px) {
   .movies-list {
     padding: 70px 0 80px 0;
   }

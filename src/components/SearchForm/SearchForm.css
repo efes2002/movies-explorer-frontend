@@ -99,7 +99,6 @@
   margin: 0;
   padding: 0;
   display: grid;
-
 }
 
 .search__checkbox-img2 {
@@ -110,8 +109,19 @@
   background: #F5F5F5;
   border-radius: 16px;
 }
+/*
 
 .search__checkbox-input:checked + .search__checkbox-img1 {
+  justify-content: end;
+  background: #3DDC84;
+}
+
+
+*/
+
+
+
+.search__checkbox-input_checked {
   justify-content: end;
   background: #3DDC84;
 }

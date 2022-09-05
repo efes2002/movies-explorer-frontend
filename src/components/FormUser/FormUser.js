@@ -1,129 +1,131 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './FormUser.css'
 import logo from '../../images/logo.png'
 import {useLocation, Link} from "react-router-dom";
+import {FormValidator} from '../../utils/FormValidator'
 
-function FormUser() {
+function FormUser({onRegister, onLogin, submitError, onSubmitError}) {
 
   const [valueName, setValueName] = useState('');
-  const [isValidName, setValidityName] = useState(false);
-  const [errorName, setErrorName] = useState('');
-
   const [valueEmail, setValueEmail] = useState('');
-  const [isValidEmail, setValidityEmail] = useState(false);
-  const [errorEmail, setErrorEmail] = useState('');
-
   const [valuePassword, setValuePassword] = useState('');
-  const [isValidPassword, setValidityPassword] = useState(false);
-  const [errorPassword, setErrorPassword] = useState('');
 
   function handleInputNameChange(event) {
+    onSubmitError('');
     const input = event.target;
     setValueName(input.value);
-    setValidityName(input.validity.valid);
-    if (!isValidName) { setErrorName(input.validationMessage); }
-    else { setErrorName(''); }
   }
 
   function handleInputEmailChange(event) {
+    onSubmitError('');
     const input = event.target;
     setValueEmail(input.value);
-    setValidityEmail(input.validity.valid);
-    if (!isValidEmail) { setErrorEmail(input.validationMessage); }
-    else { setErrorEmail(''); }
   }
 
   function handleInputPasswordChange(event) {
+    onSubmitError('');
     const input = event.target;
     setValuePassword(input.value);
-    setValidityPassword(input.validity.valid);
-    if (!isValidPassword) { setErrorPassword(input.validationMessage); }
-    else { setErrorPassword(''); }
   }
-
 
   let location = useLocation();
   let data;
   let elementForm;
+  let onSubmit;
 
-  const registerData =
-  {
-    title: 'Добро пожаловать!',
-    buttonTitle: 'Зарегистрироваться',
-    buttonSubtitle1: 'Уже зарегистрированы?',
-    buttonSubtitle2: 'Войти',
-    buttonSubtitleLink: '/signin',
+  const argumentNameElement = {
+    labelForm: 'userName',
+    title: 'Имя',
+    inputArg: {
+      id:"userName",
+      type:"text",
+      value: valueName,
+      minLength:"3",
+      onChange: handleInputNameChange
+    }
   }
 
-  const loginData =
-  {
-    title: 'Рады видеть!',
-    buttonTitle: 'Войти',
-    buttonSubtitle1: 'Ещё не зарегистрированы?',
-    buttonSubtitle2: 'Регистрация',
-    buttonSubtitleLink: '/signup',
+  const argumentEmailElement = {
+    labelForm: 'userEmail',
+    title: 'E-mail',
+    inputArg: {
+      id:"userEmail",
+      type:"email",
+      value: valueEmail,
+      onChange: handleInputEmailChange
+    }
   }
 
+  const argumentPasswordElement = {
+    labelForm: 'userPassword',
+    title: 'Пароль',
+    inputArg: {
+      id:"userPassword",
+      type:"password",
+      value: valuePassword,
+      onChange: handleInputPasswordChange
+    }
+  }
 
-
-  const elementUserName =
-    <div className='form-user__form'>
-      <label className='form-user__form-name' form="userName">Имя</label>
+  function createInputElement({labelForm, title, inputArg}) {
+    return <div className='form-user__form'>
+      <label className='form-user__form-name' form={labelForm}>{title}</label>
       <input className='form-user__form-input'
-             id="userName"
-             type="text"
-             value={valueName}
-             minLength="3"
-             onChange={handleInputNameChange}
+             {...inputArg}
       />
-      <p className='form-user__form-error'>{errorName}</p>
+      <p className='form-user__form-error'/>
     </div>
-
-  const elementUserEmail =
-    <div className='form-user__form'>
-      <label className='form-user__form-name' form="userEmail">E-mail</label>
-      <input className='form-user__form-input'
-             id="userEmail"
-             type="email"
-             value={valueEmail}
-             onChange={handleInputEmailChange}
-      />
-       <p className='form-user__form-error'>{errorEmail}</p>
-    </div>
-
-  const elementUserPassword =
-    <div className='form-user__form'>
-      <label className='form-user__form-name' form="userPassword">Пароль</label>
-      <input className='form-user__form-input form-user__input-password'
-             id="userPassword"
-             type="password"
-             value={valuePassword}
-             onChange={handleInputPasswordChange}
-      />
-      <p className='form-user__form-error'>{errorPassword}</p>
-    </div>
+  }
 
   if (location.pathname === '/signin') {
-    data = loginData
+    data = {
+      title: 'Рады видеть!',
+      buttonTitle: 'Войти',
+      buttonSubtitle1: 'Ещё не зарегистрированы?',
+      buttonSubtitle2: 'Регистрация',
+      buttonSubtitleLink: '/signup',
+    };
+
+    onSubmit = () =>{
+      onLogin({email: valueEmail, password: valuePassword});
+    };
+
     elementForm =
       <>
-        {elementUserEmail}
-        {elementUserPassword}
-      </>
-  };
+        {createInputElement(argumentEmailElement)}
+        {createInputElement(argumentPasswordElement)}
+      </>;
+  }
 
   if (location.pathname === '/signup') {
-    data = registerData
-    elementForm =
-      <>
-        {elementUserName}
-        {elementUserEmail}
-        {elementUserPassword}
-      </>
-  };
+
+    data = {
+      title: 'Добро пожаловать!',
+      buttonTitle: 'Зарегистрироваться',
+      buttonSubtitle1: 'Уже зарегистрированы?',
+      buttonSubtitle2: 'Войти',
+      buttonSubtitleLink: '/signin',
+    };
+
+    onSubmit = () => {
+      onRegister({name: valueName, email: valueEmail, password: valuePassword});
+    };
+
+    elementForm = <>
+      {createInputElement(argumentNameElement)}
+      {createInputElement(argumentEmailElement)}
+      {createInputElement(argumentPasswordElement)}
+    </>;
+  }
+
+  useEffect(()=>{
+    const popUpCardValidator = new FormValidator('form-user');
+    popUpCardValidator.enableValidation();
+  }, [])
+
 
   return (
-    <div className='form-user'>
+    <form className='form-user' id='form-user' onSubmit={onSubmit}>
       <Link className='form-user__logo' to='/'>
         <img className='form-user__login-icon' src={logo} alt="Логотип"/>
       </Link>
@@ -131,14 +133,20 @@ function FormUser() {
       <div className='form-user__inputs'>
         {elementForm}
       </div>
-      <button type="button" className='form-user__button cursor-hover' disabled="">{data.buttonTitle}</button>
+      <button
+        type="submit"
+        className='form-user__button cursor-hover'
+      >
+        {data.buttonTitle}
+        <p className='form-user__submit-error'>{submitError}</p>
+      </button>
       <div className='form-user__link-box'>
         <p className='form-user__link-title'>{data.buttonSubtitle1}</p>
         <Link className='form-user__link-login' to={data.buttonSubtitleLink}>
           {data.buttonSubtitle2}
         </Link>
       </div>
-    </div>
+    </form>
   )
 }
 
